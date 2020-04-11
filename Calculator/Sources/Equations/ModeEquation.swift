@@ -13,12 +13,12 @@ struct ModeEquation: View {
     @EnvironmentObject var env: GlobalEnvironment
     
     var mode: Mode
-    var equations: [Equation]
     
     var body: some View {
-        ForEach(equations, id: \.self) { equation in
+        ForEach(self.mode.equations, id: \.self) { equation in
             ZStack {
                 Button(action: {
+                    self.env.mode = self.mode
                     self.env.equation = equation
                     self.env.equationResult.removeAll()
                     withAnimation {
@@ -40,29 +40,29 @@ struct ModeEquation: View {
         switch self.mode {
         case .algebraic:
             return AnyView(
-                AlgebraicEquationElement(exponential: equation.degree)
+                AlgebraicEquation(exponential: equation.degree)
                     .foregroundColor(Color.white)
                     .padding()
             )
         case .simultaneous:
             return AnyView(
-                SimultaneousElement(sets: equation.degree)
+                SimultaneousEquation(sets: equation.degree)
                     .foregroundColor(Color.white)
                     .padding()
             )
         case .exponential:
             return AnyView(
-                Text("Exponential")
+                ExponentialEquation()
+                    .foregroundColor(Color.white)
+                    .padding()
             )
-        default:
-            return AnyView(
-                EmptyView()
-            )
+        }
     }
 }
 
 struct ModeEquationView_Previews: PreviewProvider {
     static var previews: some View {
-        ModeEquation(mode: Mode.algebraic, equations: Mode.algebraic.equation).environmentObject(GlobalEnvironment())
+        ModeEquation(mode: Mode.exponential)
+            .environmentObject(GlobalEnvironment())
     }
 }

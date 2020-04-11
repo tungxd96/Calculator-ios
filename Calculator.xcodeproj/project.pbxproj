@@ -7,15 +7,80 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD195E33242BBE2800E631EB /* GlobalEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD195E32242BBE2800E631EB /* GlobalEnvironment.swift */; };
+		FD195E36242BBE8C00E631EB /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD195E35242BBE8C00E631EB /* CalculatorButton.swift */; };
+		FD542810242BC1EA00FD0FD9 /* CalculatorButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD54280F242BC1EA00FD0FD9 /* CalculatorButtonView.swift */; };
+		FD6D1D9E24325D57006ABC77 /* CalcResultElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D1D9D24325D57006ABC77 /* CalcResultElement.swift */; };
+		FD6D1DA024325F92006ABC77 /* SubscriptElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D1D9F24325F92006ABC77 /* SubscriptElement.swift */; };
+		FD6D1DA824327465006ABC77 /* AsciiTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D1DA724327465006ABC77 /* AsciiTable.swift */; };
+		FD6D1DAB24328927006ABC77 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D1DAA24328927006ABC77 /* WebView.swift */; };
+		FD6D1DAD24330532006ABC77 /* ExponentialEquation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D1DAC24330532006ABC77 /* ExponentialEquation.swift */; };
+		FDB0C58D242D7474007708A7 /* ResultDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB0C58C242D7474007708A7 /* ResultDisplayView.swift */; };
+		FDB0C58F242D7A5F007708A7 /* PowerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB0C58E242D7A5F007708A7 /* PowerElement.swift */; };
+		FDB0C591242D7BDE007708A7 /* AlgebraicEquation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB0C590242D7BDE007708A7 /* AlgebraicEquation.swift */; };
+		FDB0C597242E71F4007708A7 /* ExpressionTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB0C596242E71F4007708A7 /* ExpressionTree.swift */; };
+		FDB0C59C242E8078007708A7 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB0C59B242E8078007708A7 /* Stack.swift */; };
+		FDC49EA52430F9A7005F4D70 /* OperatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC49EA42430F9A7005F4D70 /* OperatorView.swift */; };
+		FDC49EA72430FB3D005F4D70 /* ButtonDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC49EA62430FB3D005F4D70 /* ButtonDimension.swift */; };
+		FDC49EA92430FC99005F4D70 /* ArithmeticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC49EA82430FC99005F4D70 /* ArithmeticView.swift */; };
+		FDC49EAB2430FD96005F4D70 /* ExponentialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC49EAA2430FD96005F4D70 /* ExponentialView.swift */; };
+		FDC49EB524310CC7005F4D70 /* DefaultNumpadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC49EB424310CC7005F4D70 /* DefaultNumpadView.swift */; };
+		FDC49EB724311EBB005F4D70 /* ModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC49EB624311EBB005F4D70 /* ModeView.swift */; };
+		FDC49EB924312CF3005F4D70 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC49EB824312CF3005F4D70 /* Mode.swift */; };
+		FDC49EBB243131FA005F4D70 /* SimultaneousEquation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC49EBA243131FA005F4D70 /* SimultaneousEquation.swift */; };
+		FDC49EBD2431376B005F4D70 /* ModeEquation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC49EBC2431376B005F4D70 /* ModeEquation.swift */; };
+		FDC49EC124315879005F4D70 /* EquationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC49EC024315879005F4D70 /* EquationInputView.swift */; };
+		FDC49EC4243159B9005F4D70 /* AlgebraicInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC49EC3243159B9005F4D70 /* AlgebraicInput.swift */; };
+		FDC49EC624316D5F005F4D70 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC49EC524316D5F005F4D70 /* Tag.swift */; };
+		FDC49EC82431783E005F4D70 /* EquationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC49EC72431783E005F4D70 /* EquationTitle.swift */; };
+		FDC49ECA24319E26005F4D70 /* InputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC49EC924319E26005F4D70 /* InputElement.swift */; };
+		FDD1BA4C242FF95E00893453 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD1BA4B242FF95E00893453 /* Node.swift */; };
+		FDD1BA5024300DB000893453 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD1BA4F24300DB000893453 /* Math.swift */; };
+		FDD1BA562430182F00893453 /* myAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = FDD1BA552430182F00893453 /* myAvatar.png */; };
+		FDD1BA5824301A8E00893453 /* MyContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD1BA5724301A8E00893453 /* MyContactView.swift */; };
+		FDD1BA5A24301C0600893453 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = FDD1BA5924301C0600893453 /* background.png */; };
 		FDE0C7AC242AE73C0045EB0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE0C7AB242AE73C0045EB0E /* AppDelegate.swift */; };
 		FDE0C7AE242AE73C0045EB0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE0C7AD242AE73C0045EB0E /* SceneDelegate.swift */; };
 		FDE0C7B0242AE73C0045EB0E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE0C7AF242AE73C0045EB0E /* ContentView.swift */; };
 		FDE0C7B2242AE7400045EB0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDE0C7B1242AE7400045EB0E /* Assets.xcassets */; };
 		FDE0C7B5242AE7400045EB0E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDE0C7B4242AE7400045EB0E /* Preview Assets.xcassets */; };
 		FDE0C7B8242AE7400045EB0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDE0C7B6242AE7400045EB0E /* LaunchScreen.storyboard */; };
+		FDF5EDE8242C3313009A8FC9 /* Equation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5EDE7242C3313009A8FC9 /* Equation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD195E32242BBE2800E631EB /* GlobalEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalEnvironment.swift; sourceTree = "<group>"; };
+		FD195E35242BBE8C00E631EB /* CalculatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
+		FD54280F242BC1EA00FD0FD9 /* CalculatorButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonView.swift; sourceTree = "<group>"; };
+		FD6D1D9D24325D57006ABC77 /* CalcResultElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcResultElement.swift; sourceTree = "<group>"; };
+		FD6D1D9F24325F92006ABC77 /* SubscriptElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptElement.swift; sourceTree = "<group>"; };
+		FD6D1DA724327465006ABC77 /* AsciiTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsciiTable.swift; sourceTree = "<group>"; };
+		FD6D1DAA24328927006ABC77 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		FD6D1DAC24330532006ABC77 /* ExponentialEquation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExponentialEquation.swift; sourceTree = "<group>"; };
+		FDB0C58C242D7474007708A7 /* ResultDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDisplayView.swift; sourceTree = "<group>"; };
+		FDB0C58E242D7A5F007708A7 /* PowerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerElement.swift; sourceTree = "<group>"; };
+		FDB0C590242D7BDE007708A7 /* AlgebraicEquation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgebraicEquation.swift; sourceTree = "<group>"; };
+		FDB0C596242E71F4007708A7 /* ExpressionTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionTree.swift; sourceTree = "<group>"; };
+		FDB0C59B242E8078007708A7 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		FDC49EA42430F9A7005F4D70 /* OperatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorView.swift; sourceTree = "<group>"; };
+		FDC49EA62430FB3D005F4D70 /* ButtonDimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDimension.swift; sourceTree = "<group>"; };
+		FDC49EA82430FC99005F4D70 /* ArithmeticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmeticView.swift; sourceTree = "<group>"; };
+		FDC49EAA2430FD96005F4D70 /* ExponentialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExponentialView.swift; sourceTree = "<group>"; };
+		FDC49EB424310CC7005F4D70 /* DefaultNumpadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNumpadView.swift; sourceTree = "<group>"; };
+		FDC49EB624311EBB005F4D70 /* ModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeView.swift; sourceTree = "<group>"; };
+		FDC49EB824312CF3005F4D70 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
+		FDC49EBA243131FA005F4D70 /* SimultaneousEquation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimultaneousEquation.swift; sourceTree = "<group>"; };
+		FDC49EBC2431376B005F4D70 /* ModeEquation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeEquation.swift; sourceTree = "<group>"; };
+		FDC49EC024315879005F4D70 /* EquationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquationInputView.swift; sourceTree = "<group>"; };
+		FDC49EC3243159B9005F4D70 /* AlgebraicInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgebraicInput.swift; sourceTree = "<group>"; };
+		FDC49EC524316D5F005F4D70 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		FDC49EC72431783E005F4D70 /* EquationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquationTitle.swift; sourceTree = "<group>"; };
+		FDC49EC924319E26005F4D70 /* InputElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputElement.swift; sourceTree = "<group>"; };
+		FDD1BA4B242FF95E00893453 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		FDD1BA4F24300DB000893453 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		FDD1BA552430182F00893453 /* myAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = myAvatar.png; path = ../../../../../Downloads/myAvatar.png; sourceTree = "<group>"; };
+		FDD1BA5724301A8E00893453 /* MyContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyContactView.swift; sourceTree = "<group>"; };
+		FDD1BA5924301C0600893453 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = ../../../../../Downloads/background.png; sourceTree = "<group>"; };
 		FDE0C7A8242AE73C0045EB0E /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDE0C7AB242AE73C0045EB0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDE0C7AD242AE73C0045EB0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +89,7 @@
 		FDE0C7B4242AE7400045EB0E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FDE0C7B7242AE7400045EB0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FDE0C7B9242AE7400045EB0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDF5EDE7242C3313009A8FC9 /* Equation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +103,98 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD195E34242BBE7700E631EB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FD195E35242BBE8C00E631EB /* CalculatorButton.swift */,
+				FDF5EDE7242C3313009A8FC9 /* Equation.swift */,
+				FDC49EB824312CF3005F4D70 /* Mode.swift */,
+				FDB0C596242E71F4007708A7 /* ExpressionTree.swift */,
+				FDC49EA62430FB3D005F4D70 /* ButtonDimension.swift */,
+				FDC49EC524316D5F005F4D70 /* Tag.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FD195E38242BC17E00E631EB /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FD6D1DA924327C3B006ABC77 /* Inputs */,
+				FD6D1DA424326B9A006ABC77 /* Views */,
+				FD6D1DA124326A2A006ABC77 /* Elements */,
+				FDC49EC2243159AB005F4D70 /* Equations */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		FD6D1DA124326A2A006ABC77 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				FDB0C58E242D7A5F007708A7 /* PowerElement.swift */,
+				FD6D1D9F24325F92006ABC77 /* SubscriptElement.swift */,
+				FD6D1D9D24325D57006ABC77 /* CalcResultElement.swift */,
+				FDC49EC924319E26005F4D70 /* InputElement.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		FD6D1DA424326B9A006ABC77 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FDB0C58C242D7474007708A7 /* ResultDisplayView.swift */,
+				FD54280F242BC1EA00FD0FD9 /* CalculatorButtonView.swift */,
+				FDD1BA5724301A8E00893453 /* MyContactView.swift */,
+				FDC49EA42430F9A7005F4D70 /* OperatorView.swift */,
+				FDC49EA82430FC99005F4D70 /* ArithmeticView.swift */,
+				FDC49EAA2430FD96005F4D70 /* ExponentialView.swift */,
+				FDC49EB424310CC7005F4D70 /* DefaultNumpadView.swift */,
+				FDC49EB624311EBB005F4D70 /* ModeView.swift */,
+				FDC49EC72431783E005F4D70 /* EquationTitle.swift */,
+				FD6D1DAA24328927006ABC77 /* WebView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FD6D1DA924327C3B006ABC77 /* Inputs */ = {
+			isa = PBXGroup;
+			children = (
+				FDC49EC3243159B9005F4D70 /* AlgebraicInput.swift */,
+				FDC49EC024315879005F4D70 /* EquationInputView.swift */,
+			);
+			path = Inputs;
+			sourceTree = "<group>";
+		};
+		FDB0C59A242E8069007708A7 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				FDD1BA4F24300DB000893453 /* Math.swift */,
+				FDB0C59B242E8078007708A7 /* Stack.swift */,
+				FDD1BA4B242FF95E00893453 /* Node.swift */,
+				FD6D1DA724327465006ABC77 /* AsciiTable.swift */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		FDC49EC2243159AB005F4D70 /* Equations */ = {
+			isa = PBXGroup;
+			children = (
+				FDC49EBC2431376B005F4D70 /* ModeEquation.swift */,
+				FDC49EBA243131FA005F4D70 /* SimultaneousEquation.swift */,
+				FDB0C590242D7BDE007708A7 /* AlgebraicEquation.swift */,
+				FD6D1DAC24330532006ABC77 /* ExponentialEquation.swift */,
+			);
+			path = Equations;
+			sourceTree = "<group>";
+		};
+		FDD1BA512430164900893453 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FDD1BA5924301C0600893453 /* background.png */,
+				FDD1BA552430182F00893453 /* myAvatar.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		FDE0C79F242AE73C0045EB0E = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +214,11 @@
 		FDE0C7AA242AE73C0045EB0E /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				FDD1BA512430164900893453 /* Images */,
+				FDB0C59A242E8069007708A7 /* Libraries */,
+				FD195E38242BC17E00E631EB /* Sources */,
+				FD195E34242BBE7700E631EB /* Models */,
+				FDE0C7C6242AFA420045EB0E /* EnvironmentObjects */,
 				FDE0C7AB242AE73C0045EB0E /* AppDelegate.swift */,
 				FDE0C7AD242AE73C0045EB0E /* SceneDelegate.swift */,
 				FDE0C7AF242AE73C0045EB0E /* ContentView.swift */,
@@ -73,6 +236,14 @@
 				FDE0C7B4242AE7400045EB0E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FDE0C7C6242AFA420045EB0E /* EnvironmentObjects */ = {
+			isa = PBXGroup;
+			children = (
+				FD195E32242BBE2800E631EB /* GlobalEnvironment.swift */,
+			);
+			path = EnvironmentObjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,8 +305,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDE0C7B8242AE7400045EB0E /* LaunchScreen.storyboard in Resources */,
+				FDD1BA5A24301C0600893453 /* background.png in Resources */,
 				FDE0C7B5242AE7400045EB0E /* Preview Assets.xcassets in Resources */,
 				FDE0C7B2242AE7400045EB0E /* Assets.xcassets in Resources */,
+				FDD1BA562430182F00893453 /* myAvatar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,9 +319,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDB0C59C242E8078007708A7 /* Stack.swift in Sources */,
+				FDC49EC124315879005F4D70 /* EquationInputView.swift in Sources */,
+				FDB0C58D242D7474007708A7 /* ResultDisplayView.swift in Sources */,
+				FD195E33242BBE2800E631EB /* GlobalEnvironment.swift in Sources */,
+				FDC49EBB243131FA005F4D70 /* SimultaneousEquation.swift in Sources */,
+				FDC49EA72430FB3D005F4D70 /* ButtonDimension.swift in Sources */,
+				FD6D1DAD24330532006ABC77 /* ExponentialEquation.swift in Sources */,
 				FDE0C7AC242AE73C0045EB0E /* AppDelegate.swift in Sources */,
+				FDC49EB724311EBB005F4D70 /* ModeView.swift in Sources */,
+				FDB0C597242E71F4007708A7 /* ExpressionTree.swift in Sources */,
+				FDC49EB924312CF3005F4D70 /* Mode.swift in Sources */,
+				FD6D1DAB24328927006ABC77 /* WebView.swift in Sources */,
+				FDF5EDE8242C3313009A8FC9 /* Equation.swift in Sources */,
+				FDC49EA92430FC99005F4D70 /* ArithmeticView.swift in Sources */,
+				FD6D1D9E24325D57006ABC77 /* CalcResultElement.swift in Sources */,
 				FDE0C7AE242AE73C0045EB0E /* SceneDelegate.swift in Sources */,
 				FDE0C7B0242AE73C0045EB0E /* ContentView.swift in Sources */,
+				FD6D1DA824327465006ABC77 /* AsciiTable.swift in Sources */,
+				FDB0C591242D7BDE007708A7 /* AlgebraicEquation.swift in Sources */,
+				FDC49EC4243159B9005F4D70 /* AlgebraicInput.swift in Sources */,
+				FDC49EC82431783E005F4D70 /* EquationTitle.swift in Sources */,
+				FDB0C58F242D7A5F007708A7 /* PowerElement.swift in Sources */,
+				FDC49EAB2430FD96005F4D70 /* ExponentialView.swift in Sources */,
+				FD542810242BC1EA00FD0FD9 /* CalculatorButtonView.swift in Sources */,
+				FDC49EBD2431376B005F4D70 /* ModeEquation.swift in Sources */,
+				FD195E36242BBE8C00E631EB /* CalculatorButton.swift in Sources */,
+				FDC49EB524310CC7005F4D70 /* DefaultNumpadView.swift in Sources */,
+				FDC49EA52430F9A7005F4D70 /* OperatorView.swift in Sources */,
+				FD6D1DA024325F92006ABC77 /* SubscriptElement.swift in Sources */,
+				FDC49EC624316D5F005F4D70 /* Tag.swift in Sources */,
+				FDC49ECA24319E26005F4D70 /* InputElement.swift in Sources */,
+				FDD1BA4C242FF95E00893453 /* Node.swift in Sources */,
+				FDD1BA5024300DB000893453 /* Math.swift in Sources */,
+				FDD1BA5824301A8E00893453 /* MyContactView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +497,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Calculator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.FlexCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -313,7 +517,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Calculator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.FlexCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

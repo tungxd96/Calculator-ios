@@ -29,6 +29,6 @@ struct SubscriptElement: View {
 
 struct SubscriptElement_Previews: PreviewProvider {
     static var previews: some View {
-        SubscriptElement(base: "", sub: "")
+        SubscriptElement(base: "a", sub: "1")
     }
 }

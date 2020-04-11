@@ -9,13 +9,46 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var env: GlobalEnvironment
+
     var body: some View {
-        Text("Hello, World!")
+        ZStack (alignment: .bottom) {
+            Color.white.edgesIgnoringSafeArea(.all)
+            ScrollView (showsIndicators: false) {
+                VStack (spacing: 12) {
+                    
+                    // Title
+                    Text("CALCULATOR")
+                        .padding()
+                    
+                    // Display
+                    ResultDisplayView()
+                    
+                    // Equation
+                    EquationInputView(equation: self.env.equation)
+                    
+                    // Numpad
+                    CalculatorButtonView()
+                    
+                    // Mode
+                    //ModeButtonView()
+                    
+                    // Contact
+                    MyContactView()
+                    
+                }
+            }
+            
+            ModeView()
+            
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(GlobalEnvironment())
     }
 }

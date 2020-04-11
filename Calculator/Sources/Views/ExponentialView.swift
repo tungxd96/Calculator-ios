@@ -17,7 +17,7 @@ struct ExponentialView: View {
     let buttonDimension = ButtonDimension()
     
     var body: some View {
-        ExponentialElement(base: base, exponential: exponential)
+        PowerElement(base: base, exponential: exponential)
             .font(.system(size: 16))
             .frame(
                 width: buttonDimension.buttonWidth(button: button),

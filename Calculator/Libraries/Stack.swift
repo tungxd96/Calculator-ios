@@ -6,16 +6,33 @@
 //  Copyright © 2020 Tung Dinh. All rights reserved.
 //
 
-import SwiftUI
+import Foundation
 
-struct Stack: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct Stack<Element> {
+    private var items: [Element] = []
+    
+    func peek() -> Element {
+        guard let topElement = items.first else { fatalError("This stack is empty.") }
+        return topElement
     }
-}
+    
+    mutating func pop() -> Element {
+        return items.removeFirst()
+    }
+  
+    mutating func push(_ element: Element) {
+        items.insert(element, at: 0)
+    }
+    
+    var isEmpty: Bool {
+      return items.isEmpty
+    }
 
-struct Stack_Previews: PreviewProvider {
-    static var previews: some View {
-        Stack()
+    var count: Int {
+      return items.count
+    }
+    
+    mutating func clear() {
+        items.removeAll()
     }
 }

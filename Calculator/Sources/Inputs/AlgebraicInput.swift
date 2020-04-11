@@ -12,14 +12,14 @@ struct AlgebraicInput: View {
     
     @EnvironmentObject var env: GlobalEnvironment
     
-    var nodes: [Node]
-    var tags: [Tag]
+    var nodeSet: [[Node]]
     var equation: Equation
-    
-    let math = Math()
     
     var body: some View {
         self.content()
+            .sheet(isPresented: self.$env.isEquationInfo, content: {
+                WebView(url: self.equation.wikipediaUrl)
+            })
     }
     
     func content() -> some View {
@@ -27,34 +27,58 @@ struct AlgebraicInput: View {
             return AnyView(
                 ZStack {
                     VStack {
-                        HStack {
-                            Spacer()
-                            Button(action: {
-                                self.env.isEqInputClosed.toggle()
-                            }) {
-                                Image(systemName: "xmark.circle")
-                                    .padding(8)
-                                    .foregroundColor(Color.black)
+                        ZStack {
+                            HStack {
+                                Spacer()
+                                
+                                Text("Equation")
+                                    .font(.title)
+                                
+                                Spacer()
+                            }
+                            
+                            HStack {
+                                Spacer()
+
+                                Button(action: {
+                                    self.env.isEqInputClosed.toggle()
+                                }) {
+                                    Image(systemName: "xmark.circle")
+                                        .padding(8)
+                                        .foregroundColor(Color.black)
+                                }
                             }
                         }
+                        .padding(8)
                         
                         EquationTitle()
                         
-                        ScrollView (.horizontal, showsIndicators: false) {
-                            HStack (spacing: 24) {
-                                ForEach (0 ..< self.nodes.count, id: \.self) { i in
-                                    InputElement(tags: self.tags, nodes: self.nodes, i: i)
+                        VStack {
+                            ForEach (0..<self.equation.tagSet.count, id: \.self) { i in
+                                ScrollView (.horizontal, showsIndicators: false) {
+                                    HStack (spacing: 24) {
+                                        ForEach (0 ..< self.nodeSet[i].count, id: \.self) { j in
+                                            InputElement(
+                                                tags: self.equation.tagSet[i],
+                                                nodes: self.nodeSet[i],
+                                                i: i + 1,
+                                                j: j
+                                            )
+                                        }
+                                    }
+                                    .padding(EdgeInsets(top: 4, leading: 8, bottom: 16, trailing: 8))
                                 }
                             }
-                            .padding(EdgeInsets(top: 4, leading: 8, bottom: 16, trailing: 8))
                         }
                         
                         ZStack {
                             Button(action: {
-                                self.env.equationResult = self.math.computeCalcEquation(
+                                self.env.focus = .general
+                                self.env.equationResult = Math.computeCalcEquation(
                                     equation: self.equation,
-                                    nodes: self.nodes
+                                    nodeSet: self.nodeSet
                                 )
+                                self.env.clear()
                             }) {
                                 Text("Solve")
                                     .foregroundColor(.white)
@@ -104,8 +128,7 @@ struct AlgebraicInput: View {
 struct AlgebraicInput_Previews: PreviewProvider {
     static var previews: some View {
         AlgebraicInput(
-            nodes: [Node(data: "")],
-            tags: [.linear_a],
+            nodeSet: [[Node(data: ""), Node(data: "")]],
             equation: .linear
         )
         .environmentObject(GlobalEnvironment())

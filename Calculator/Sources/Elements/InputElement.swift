@@ -15,16 +15,12 @@ struct InputElement: View {
     var tags: [Tag]
     var nodes: [Node]
     var i: Int
+    var j: Int
     
     var body: some View {
         VStack {
-            Text(String(Character(UnicodeScalar(97 + i) ?? UnicodeScalar(97))))
-                .padding(.bottom, 16)
-            Text(self.receiveText(
-                    node: nodes[i],
-                    tag: self.tags[i]
-                )
-            )
+            self.labelView()
+            Text(self.receiveText())
                 .frame(width: 160, height: 50)
                 .background(Color.white)
                 .cornerRadius(50)
@@ -33,36 +29,59 @@ struct InputElement: View {
             }
             .overlay(
                 RoundedRectangle(cornerRadius: 50)
-                    .stroke(Color.blue, lineWidth: self.env.focus == self.tags[i] ? 1 : 0)
+                    .stroke(Color.blue, lineWidth: self.env.focus == self.tags[j] ? 1 : 0)
             )
         }
     }
     
-    func onTap() {
-        self.env.focus = self.tags[self.i]
-        if self.nodes[self.i].get() == "" {
-            self.env.clear()
-        }
-        else {
-            self.env.display = self.nodes[self.i].get()
+    func labelView() -> some View {
+        switch self.env.mode {
+        case .algebraic:
+            return AnyView(
+                Text(AsciiTable.lowerAlpha[j])
+                    .padding(.bottom, 16)
+            )
+        case .simultaneous:
+            return AnyView(
+                SubscriptElement(base: AsciiTable.lowerAlpha[j], sub: String(i))
+                    .padding(.bottom, 16)
+            )
+        case .exponential:
+            return AnyView(EmptyView())
         }
     }
     
-    func receiveText(node: Node, tag: Tag) -> String {
-        if self.env.focus == tag {
+    func onTap() {
+        self.env.focus = self.tags[self.j]
+        if self.nodes[self.j].get() == "" {
+            self.env.clear()
+        }
+        else {
+            self.env.display = self.nodes[self.j].get()
+        }
+    }
+    
+    func receiveText() -> String {
+        if self.env.focus == self.tags[j] {
             if self.env.display != "" {
-                if node.get() == self.env.display {
+                if nodes[j].get() == self.env.display {
                     self.env.clear()
                 }
             }
-            node.update(data: self.env.display)
+            nodes[j].update(data: self.env.display)
         }
-        return self.env.focus == tag ? self.env.display : node.get()
+        return self.env.focus == self.tags[j] ? self.env.display : nodes[j].get()
     }
 }
 
 struct InputElement_Previews: PreviewProvider {
     static var previews: some View {
-        InputElement(tags: [.linear_a], nodes: [Node(data: "")], i: 0).environmentObject(GlobalEnvironment())
+        InputElement(
+            tags: [.linear_a],
+            nodes: [Node(data: "")],
+            i: 0,
+            j: 0
+        )
+        .environmentObject(GlobalEnvironment())
     }
 }

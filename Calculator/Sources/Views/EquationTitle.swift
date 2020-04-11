@@ -13,13 +13,40 @@ struct EquationTitle: View {
     @EnvironmentObject var env: GlobalEnvironment
     
     var body: some View {
-        ZStack {
-            AlgebraicEquationElement(exponential: self.env.equation.degree)
-                .foregroundColor(Color.white)
-                .padding()
+        Button(action: {
+            withAnimation {
+                self.env.isEquationInfo.toggle()
+            }
+        }) {
+            ZStack {
+                self.content()
+            }
+            .background(Color.blue)
+            .cornerRadius(20)
         }
-        .background(Color.blue)
-        .cornerRadius(20)
+    }
+    
+    func content() -> some View {
+        switch self.env.mode {
+        case .algebraic:
+            return AnyView(
+                AlgebraicEquation(exponential: self.env.equation.degree)
+                    .foregroundColor(Color.white)
+                    .padding()
+            )
+        case .simultaneous:
+            return AnyView(
+                SimultaneousEquation(sets: self.env.equation.degree)
+                    .foregroundColor(Color.white)
+                    .padding()
+            )
+        case .exponential:
+            return AnyView(
+                ExponentialEquation()
+                    .foregroundColor(Color.white)
+                    .padding()
+            )
+        }
     }
 }
 

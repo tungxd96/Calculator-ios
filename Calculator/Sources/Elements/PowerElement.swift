@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ExponentialElement: View {
+struct PowerElement: View {
     
     var base: String
     var exponential: String
@@ -29,8 +29,8 @@ struct ExponentialElement: View {
     }
 }
 
-struct ExponentialElement_Previews: PreviewProvider {
+struct PowerElement_Previews: PreviewProvider {
     static var previews: some View {
-        ExponentialElement(base: "x", exponential: "2")
+        PowerElement(base: "x", exponential: "2")
     }
 }

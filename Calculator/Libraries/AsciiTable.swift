@@ -6,16 +6,8 @@
 //  Copyright © 2020 Tung Dinh. All rights reserved.
 //
 
-import SwiftUI
-
-struct AsciiTable: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct AsciiTable_Previews: PreviewProvider {
-    static var previews: some View {
-        AsciiTable()
-    }
+struct AsciiTable {
+    static let lowerAlpha: [String] = [
+        "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
+    ]
 }

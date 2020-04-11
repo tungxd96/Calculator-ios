@@ -8,14 +8,18 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class Node {
+    var data: String
+    
+    init(data: String) {
+        self.data = data
     }
-}
-
-struct SwiftUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        SwiftUIView()
+    
+    func update(data: String) {
+        self.data = data
+    }
+    
+    func get() -> String {
+        return self.data
     }
 }

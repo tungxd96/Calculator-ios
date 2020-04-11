@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct AlgebraicEquationElement: View {
+struct AlgebraicEquation: View {
     
     var exponential: Int
     
@@ -16,8 +16,8 @@ struct AlgebraicEquationElement: View {
         HStack {
             ForEach (0 ..< exponential + 1, id: \.self) { i in
                 HStack {
-                    Text(String(Character(UnicodeScalar(97 + i) ?? UnicodeScalar(97))))
-                    ExponentialElement(base: "x", exponential: self.reverseExponential(exp: i))
+                    Text(AsciiTable.lowerAlpha[i])
+                    PowerElement(base: "x", exponential: self.reverseExponential(exp: i))
                     self.addPlus(i: i)
                     self.addEqual(i: i)
                 }
@@ -49,8 +49,8 @@ struct AlgebraicEquationElement: View {
     }
 }
 
-struct AlgebraicEquationElement_Previews: PreviewProvider {
+struct AlgebraicEquation_Previews: PreviewProvider {
     static var previews: some View {
-        AlgebraicEquationElement(exponential: 2)
+        AlgebraicEquation(exponential: 2)
     }
 }

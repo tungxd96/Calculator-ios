@@ -21,36 +21,42 @@ struct EquationInputView: View {
     func content() -> some View {
         switch self.equation {
         case .linear, .quadratic, .cubic, .quartic:
-            let nodes: [Node] = self.generateNodes(degree: self.equation.degree)
+            let nodeSet: [[Node]] = self.generateNodeSet(
+                degree: self.equation.degree,
+                round: 1
+            )
             return AnyView(
                 AlgebraicInput(
-                    nodes: nodes,
-                    tags: equation.tags,
-                    equation: self.equation
+                    nodeSet: nodeSet,
+                    equation: equation
                 )
             )
         case .sim2, .sim3:
-            let nodes: [Node] = self.generateNodes(degree: self.equation.degree * 2)
+            let nodeSet: [[Node]] = self.generateNodeSet(
+                degree: self.equation.degree,
+                round: self.equation.degree
+            )
             return AnyView(
-                AlgebraicInput(
-                    nodes: nodes,
-                    tags: equation.tags,
-                    equation: self.equation
-                )
+                AlgebraicInput(nodeSet: nodeSet, equation: equation)
             )
         case .exponential:
-            return AnyView(Text(self.equation.rawValue))
+            return AnyView(
+                EquationTitle()
+            )
         default:
             return AnyView(EmptyView())
         }
     }
     
-    func generateNodes(degree: Int) -> [Node] {
-        var nodes: [Node] = []
-        for _ in 0...degree {
-            nodes.append(Node(data: ""))
+    func generateNodeSet(degree: Int, round: Int) -> [[Node]] {
+        var nodeSet: [[Node]] = []
+        for i in 0..<round {
+            nodeSet.append([])
+            for _ in 0...degree {
+                nodeSet[i].append(Node(data: ""))
+            }
         }
-        return nodes
+        return nodeSet
     }
 }
 

@@ -8,14 +8,18 @@
 
 import SwiftUI
 
-struct ButtonDimension: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class ButtonDimension {
+    
+    func buttonWidth(button: CalculatorButton) -> CGFloat {
+        if button == .zero {
+            return self.buttonHeight() * 2 + 16
+        }
+        
+        return self.buttonHeight()
     }
-}
-
-struct ButtonDimension_Previews: PreviewProvider {
-    static var previews: some View {
-        ButtonDimension()
+    
+    func buttonHeight() -> CGFloat {
+        return (UIScreen.main.bounds.width - 14 * 12) / 4
     }
+    
 }

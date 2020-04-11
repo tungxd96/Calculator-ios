@@ -58,7 +58,7 @@ struct ModeView: View {
                             Text(mode.title)
                                 .font(.title)
                                 .padding()
-                            self.modeContents(mode: mode)
+                            ModeEquation(mode: mode)
                         }
                     }
                 }
@@ -69,17 +69,6 @@ struct ModeView: View {
         }.background(Color.white)
             .edgesIgnoringSafeArea(.all)
             .offset(x: 0, y: self.env.isMode ? 0 : self.screen?.frame.height ?? 0)
-    }
-    
-    func modeContents(mode: Mode) -> some View {
-        switch mode {
-        case .algebraic:
-            return AnyView(AlgebraicEquation(equations: mode.equation))
-        case .simultaneous:
-            return AnyView(SimultaneousEquation(equations: mode.equation))
-        case .exponential:
-            return AnyView(AlgebraicEquation(equations: mode.equation))
-        }
     }
 }
 

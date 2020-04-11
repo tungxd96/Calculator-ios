@@ -7,15 +7,34 @@
 //
 
 import SwiftUI
+import Foundation
+import WebKit
 
-struct WebView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct WebView: UIViewRepresentable {
+    
+    @EnvironmentObject var env: GlobalEnvironment
+    var url: String
+    
+    func makeUIView(context: Context) -> WKWebView {
+        guard let url = URL(string: self.url) else {
+            return WKWebView()
+        }
+        
+        let request = URLRequest(url: url)
+        let wkWebView = WKWebView()
+        wkWebView.load(request)
+        
+        return wkWebView
     }
+    
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+
+    }
+    
 }
 
 struct WebView_Previews: PreviewProvider {
     static var previews: some View {
-        WebView()
+        WebView(url: "https://www.google.com").environmentObject(GlobalEnvironment())
     }
 }

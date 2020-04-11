@@ -8,18 +8,22 @@
 
 import SwiftUI
 
-struct SimultaneousElement: View {
+struct SimultaneousEquation: View {
     
     var sets: Int
     
     var body: some View {
-        HStack {
-            ForEach(0..<sets, id: \.self) { i in
+        VStack {
+            ForEach (0..<self.sets, id: \.self) { i in
                 HStack {
-                    Text(String(Character(UnicodeScalar(97 + i) ?? UnicodeScalar(97))))
-                    Text(String(Character(UnicodeScalar(120 + i) ?? UnicodeScalar(120))))
-                    self.addPlus(i: i)
-                    self.addEqual(i: i)
+                    ForEach(0..<self.sets, id: \.self) { j in
+                        HStack {
+                            SubscriptElement(base: AsciiTable.lowerAlpha[j], sub: String(i + 1))
+                            Text(AsciiTable.lowerAlpha[23 + j])
+                            self.addPlus(i: j)
+                            self.addEqual(i: i, j: j)
+                        }
+                    }
                 }
             }
         }
@@ -32,12 +36,12 @@ struct SimultaneousElement: View {
         return AnyView(Text(""))
     }
     
-    func addEqual(i: Int) -> some View {
-        if i == sets - 1 {
+    func addEqual(i: Int, j: Int) -> some View {
+        if j == sets - 1 {
             return AnyView(
                 HStack {
                     Text("=")
-                    Text(String(Character(UnicodeScalar(97 + i + 1) ?? UnicodeScalar(97))))
+                    SubscriptElement(base: AsciiTable.lowerAlpha[j + 1], sub: String(i + 1))
                 }
             )
         }
@@ -45,8 +49,8 @@ struct SimultaneousElement: View {
     }
 }
 
-struct SimultaneousElement_Previews: PreviewProvider {
+struct SimultaneousEquation_Previews: PreviewProvider {
     static var previews: some View {
-        SimultaneousElement(sets: 2)
+        SimultaneousEquation(sets: 2)
     }
 }
